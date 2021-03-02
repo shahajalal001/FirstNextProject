@@ -7,6 +7,9 @@ module.exports = {
         primary: '#226dd8',
         'primary-hover': '#013c90'
       },
+      width: {
+        116: 464
+      }
     },
   },
   variants: {

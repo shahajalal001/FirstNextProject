@@ -9,15 +9,21 @@ const Login = () => {
 
     let router = useRouter()
     const handleLogin = async admin => {
-        console.log(admin)
+        let {error, msg, token} = await login(admin)
+        if(error) {
+            await Swal.fire('Error', msg, 'error')
+        } else {
+            Cookies.set('sr_token', token)
+            await router.push('/')
+        }
     }
 
     return (
         <Wrapper>
-            <div>
-                <h1>Login</h1>
-                <div>
-                    <Form>
+            <div className='w-full md:w-116 bg-white rounded md:shadow-c-2 p-6'>
+                <h1 className='text-2xl text-center'>Login</h1>
+                <div className='px-2 py-4'>
+                    <Form layout='vertical' requiredMark={false} onFinish={handleLogin}>
                         <Form.Item 
                             name='user'
                             label='Username'
@@ -36,7 +42,7 @@ const Login = () => {
                         >
                             <Input.Password size='large'/>
                         </Form.Item>
-                        <button className='bg-primary' type='submit'>Login</button>
+                        <button className='bg-primary hover:bg-primary-hover text-white px-6 py-2 rounded mt-1' type='submit'>Login</button>
                     </Form>
                 </div>
             </div>

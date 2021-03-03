@@ -23,7 +23,8 @@
     "tailwindcss": "^2.0.3",
     "typeface-quicksand": "^1.1.13",
     "typeface-roboto": "^1.1.13",
-    "urql": "^2.0.1"
+    "urql": "^2.0.1",
+    "wonka": "^4.0.15"
   },
   "scripts": {
     "dev": "next dev -p 5050"

@@ -1,8 +1,12 @@
+import NewOwnerSubscription from '../app/subscriptions/user'
 const Home = () => {
     return (
-        <h1>
-            Hello World
-        </h1>
+        <div>
+            <NewOwnerSubscription/>
+            <h1>
+                Hello World
+            </h1>
+        </div>
     )
 }
 

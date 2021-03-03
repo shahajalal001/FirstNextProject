@@ -57,6 +57,7 @@ export const getSettings = async () => {
 }
 
 export const updateSettings =  async settings => {
+    console.log(settings)
     let mutation = `
         mutation ($settings: SettingDataInput) {
             upsertSettings(settingInput: $settings ) {

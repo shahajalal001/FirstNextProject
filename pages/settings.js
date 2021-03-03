@@ -20,7 +20,7 @@ const Settings = () => {
     }, [])
 
     const handleUpdate = async settings => {
-        console.log(settings)
+
         let {error, msg, data} = await updateSettings(settings)
         if(error){
             await Swal.fire('Error', msg, 'error')
